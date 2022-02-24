@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Triangle Number</h2>
+<p>The value of the first triangle number to have over five hundred divisors is <b id="answer"></b></p>
+
+<script>
+	var number = 0;
+	var n = 1;
+	while(number == 0) {
+
+	    var count = 0;
+	    var triangle_number = (n * (n + 1)) / 2;
+
+	    for(var i=1; i <= Math.sqrt(triangle_number); i++){
+	        if(triangle_number % i == 0) {
+	            count += 2;
+	        }
+	    }
+
+	    if(count > 500) {
+	        number = triangle_number;
+	        break;
+	    }
+
+	    n += 1;
+	}
+
+	document.getElementById("answer").innerHTML = number;
+</script> 
+
+</body>
+</html>
